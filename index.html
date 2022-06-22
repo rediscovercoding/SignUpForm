@@ -13,8 +13,8 @@
 <body>
     <div class="leftPanel">
         <div class="logoBlock">
-            <img src="logo.png" alt="logo" class="image">
-            <b class="companyName">Poppy</b>
+            <img src="logoPoppy.png" alt="logo" class="image">
+            <b class="companyName"><font color="red" class="RedText">Red </font>Poppy</b>
         </div>
     </div>
     <div class="rightPanel">
@@ -24,18 +24,18 @@
             <div class="centerBox">
                 <div>
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
+                    <input type="text" id="firstName" minlength="3" maxlength="20">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" required>
                     <label for="password">Password</label>
                     <input type="password" id="password">
                     
                 </div>
                 <div>
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName">
+                    <input type="text" id="lastName" minlength="3" maxlength="20">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="number" id="phoneNumber">
+                    <input type="tel" id="phoneNumber" maxlength="10">
                     <label for="confirmpassword">Confirm Password</label>
                     <input type="password" id="confrimpassword">
                 </div>
@@ -44,7 +44,7 @@
         </form>
         <div class="bottomText">
             <button>Create Account</button>
-            <div>Already have and account? Log in.</div>
+            <div>Already have and account? <a href="https://www.thespruce.com/oriental-poppy-flowers-2132558">Log in.</a></div>
 
         </div>
     </div>
