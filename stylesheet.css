@@ -1,0 +1,90 @@
+body {
+   display:flex;
+   background-color: rgb(43, 43, 43);
+    padding-left: 5%;
+    padding-right: 5%;
+   height: 99vh;
+   font-family: 'Roboto Condensed', sans-serif;
+   font-size: 20px;
+}
+
+.leftPanel {
+    display: flex;
+    background-image: url(flower.jpg);
+    background-size: cover;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding-top: 200px;
+}
+.logoBlock{
+    background-color: rgba(128, 126, 126, 0.267);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    flex: 0.25 1 auto;
+
+}
+.image{
+    width: 100px;
+}
+
+.companyName {
+    font-size: 50px;   
+    color:rgb(255, 255, 255);
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+.rightPanel {
+    display: flex;
+    flex-direction: column;
+    flex: 1.5 1 auto;
+    background-color: rgb(238, 157, 143);
+}
+
+form{
+    box-shadow: 0px 2px 5px black;
+    background-color: white;  
+    padding: 1%;
+}
+.centerBox{
+    display: flex;
+    justify-content: left;
+    flex: 1 1 auto;
+    padding: 5%;
+    
+}
+.centerBox div{  
+    padding: 5%;
+}
+
+.topText{
+    flex:0.3 1 auto;
+}
+
+.bottomText {
+    padding: 10%;
+    
+}
+
+input{
+    display: block;
+    height: 20px;
+    font-size: 20px;
+}
+
+label {   
+    margin-top: 10px;
+    display: block;
+}
+
+button{
+    background-color: rgb(241, 63, 63);
+    height: 50px;
+    width: 200px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
