@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div class="leftPanel">
@@ -24,29 +25,78 @@
             <div class="centerBox">
                 <div>
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" minlength="3" maxlength="20">
+                    <input type="text" id="firstName" minlength="3" maxlength="20" required onclick="placeholderText('firstName')">
                     <label for="email">Email*</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" required onclick="placeholderText('email')">
                     <label for="password">Password</label>
-                    <input type="password" id="password">
+                    <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required onclick="placeholderText('passwrd')">
                     
                 </div>
-                <div>
+                <div id="centerBoxRight">
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" minlength="3" maxlength="20">
+                    <input type="text" id="lastName" minlength="3" maxlength="20" required onclick="placeholderText('lastName')">
                     <label for="phoneNumber">Phone Number</label>
                     <input type="tel" id="phoneNumber" maxlength="10">
-                    <label for="confirmpassword">Confirm Password</label>
-                    <input type="password" id="confrimpassword">
+                    <label for="confirmpassword" id="confirmPassLable">Confirm Password</label>
+                    <input type="password" id="confirmpassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 </div>
                
             </div>
         </form>
         <div class="bottomText">
-            <button>Create Account</button>
+            <input type="submit" value="Create Account" class="buttons">
             <div>Already have and account? <a href="https://www.thespruce.com/oriental-poppy-flowers-2132558">Log in.</a></div>
 
         </div>
     </div>
+    <script>
+        // This code helps user input the right format by adding placeholders on clicking the element
+        const firstName = document.querySelector('#firstName');
+        const lastName = document.querySelector('#lastName');
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+        function placeholderText(idName){
+            if (idName == 'firstName') {
+            firstName.setAttribute('placeholder', 'Enter 3-20 characters'); console.log('What') }
+            else if (idName == 'lastName'){
+            lastName.setAttribute('placeholder', 'Enter 2-20 Characters')}
+            else if (idName == 'email'){
+            email.setAttribute('placeholder', 'Enter valid email (@ and .)')}
+            else if (idName == 'passwrd'){
+            password.setAttribute('placeholder', 'Capital+Small+Number+Symbol')}  
+        }
+        
+        
+        // Below code to match the Password and confirm password and return a message
+        const confirmpassword = document.querySelector('#confirmpassword');
+        confirmpassword.addEventListener('focusout', checkPass); 
+        password.addEventListener('focusout', checkPass); 
+        function checkPass() {
+            confirmPassLabel = document.querySelector('#centerBoxRight');
+            let div = document.createElement('div');
+            idmessage = document.querySelector('#message');
+            if (idmessage == null){messageAdd()}
+            else {idmessage.parentElement.removeChild(idmessage); messageAdd()};
+            
+            function messageAdd(){
+            text2 = confirmpassword.value; 
+            text1 = password.value;
+            if (text1 == text2){        
+                div.textContent="Passwords Match";
+                div.setAttribute('id', 'message');
+                div.style.color= 'green';
+                confirmPassLabel.appendChild(div);
+                
+            } else {
+                div.textContent="Passwords Do Not Match";
+                div.setAttribute('id', 'message');
+                div.style.color= 'red';
+                confirmPassLabel.appendChild(div);
+            }
+            }
+        }
+        
+    </script>
 </body>
+
 </html>
