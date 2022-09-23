@@ -4,3 +4,4 @@
   <li> Use of javascript for password matching and corresponding message.</li>
   <li> Creating css pseudo classes to indicate for validity of inputs. </li>
   <li> The background image and logo are created by Koustubh Dube.</li>
+<img src="./SignUpForm.JPG">
